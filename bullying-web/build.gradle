@@ -12,7 +12,10 @@ repositories {
 }
 
 dependencies {
-    compile project.ext.spring
+    compile project.ext.spring_boot
+    compile project.ext.hsqldb
+    compile project.ext.utils
+    testCompile project.ext.test
 }
 
 war{

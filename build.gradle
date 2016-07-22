@@ -13,8 +13,24 @@ allprojects {
 		mavenCentral()
 	}	
 
-	project.ext.spring = [
-		'org.springframework.boot:spring-boot-starter-web'
+	project.ext.spring_boot = [
+		'org.springframework.boot:spring-boot-starter-web',
+		'org.springframework.boot:spring-boot-starter-jersey',
+		'org.springframework.boot:spring-boot-starter-data-jpa',
+		'org.springframework.boot:spring-boot-starter-security'
+	]
+	
+	project.ext.hsqldb = [
+		'org.hsqldb:hsqldb'
+	]
+	
+	project.ext.utils = [
+		'com.google.guava:guava:18.0'
+	]
+	
+	project.ext.test = [
+		'org.assertj:assertj-core:1.7.0',
+		'org.springframework.boot:spring-boot-starter-test'
 	]
 }
 
