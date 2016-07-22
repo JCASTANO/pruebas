@@ -1,9 +1,7 @@
 package com.bullying.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.ResourceBundle;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.IntegrationTest;
@@ -13,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
-
 import com.bullying.dto.Mensaje;
 import com.bullyng.services.Application;
 
