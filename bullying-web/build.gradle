@@ -22,11 +22,6 @@ war{
 	archiveName 'bullying-web.war'
 }
 
-task copyToLib(type: Copy) {
-    into "$buildDir/output/lib"
-    from configurations.runtime
-}
-
 eclipse {
 	jdt{
 		sourceCompatibility=1.7
