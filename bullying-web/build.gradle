@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
@@ -15,11 +24,16 @@ dependencies {
     compile project.ext.spring_boot
     compile project.ext.hsqldb
     compile project.ext.utils
-    testCompile project.ext.test
+    testCompile project.ext.ut
 }
 
 war{
 	archiveName 'bullying-web.war'
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/output/lib"
+    from configurations.runtime
 }
 
 eclipse {
@@ -49,3 +63,6 @@ test {
 	}
 	reports.junitXml.destination =  file("../build/test-results")
 }
+
+jacocoTestReport.dependsOn(test)
+war.dependsOn(jacocoTestReport)
