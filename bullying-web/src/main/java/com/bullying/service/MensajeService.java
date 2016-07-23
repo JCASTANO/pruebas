@@ -12,15 +12,15 @@ public class MensajeService {
 	@Autowired
     private MensajeRepository mensajeRepository;
 
-    public Iterable<Mensaje> findAll(){
-        return mensajeRepository.findAll();
-    }
-
-    public Mensaje findById(Long id){
+    public Mensaje findOne(Long id){
         return mensajeRepository.findOne(id);
     }
 
-    public Mensaje save(Mensaje person){
-        return mensajeRepository.save(person);
+    public Mensaje save(Mensaje mensaje){
+        return mensajeRepository.save(mensaje);
+    }
+    
+    public void delete(Mensaje mensaje){
+        mensajeRepository.delete(mensaje);
     }
 }
