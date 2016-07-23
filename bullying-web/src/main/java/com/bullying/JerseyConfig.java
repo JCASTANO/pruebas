@@ -1,9 +1,11 @@
-package com.bullyng.services;
+package com.bullying;
 
 import javax.ws.rs.ApplicationPath;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
+
+import com.bullyng.controller.MensajeController;
 
 @Configuration
 @ApplicationPath("/api")

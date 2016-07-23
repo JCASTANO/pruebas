@@ -1,10 +1,21 @@
-package com.bullying.dto;
+package com.bullying.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Mensaje {
-	
+
 	public static final String HOLA_MUNDO = "Hola mundo";
 	
-	private long id;
+	@Id
+    @GeneratedValue
+    @Column(name = "id")
+	private Long id;
+	
+	@Column(name = "contenido")
 	private String contenido;
 	
 	public long getId() {

@@ -22,8 +22,7 @@ repositories {
 
 dependencies {
     compile project.ext.spring_boot
-    compile project.ext.hsqldb
-    compile project.ext.utils
+    runtime project.ext.mysql
     testCompile project.ext.ut
 }
 

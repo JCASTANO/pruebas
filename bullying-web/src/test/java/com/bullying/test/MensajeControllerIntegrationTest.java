@@ -11,8 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
-import com.bullying.dto.Mensaje;
-import com.bullyng.services.Application;
+import com.bullying.Application;
+import com.bullying.model.Mensaje;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -26,7 +26,7 @@ public class MensajeControllerIntegrationTest {
 
     @Test
     public void getMensajeTest() {
-        ResponseEntity<Mensaje> entity = restTemplate.getForEntity("http://localhost:9000/api/mensajeCtrl/getMensaje", Mensaje.class);
+        ResponseEntity<Mensaje> entity = restTemplate.getForEntity("http://localhost:9000/api/mensajeController/getMensaje", Mensaje.class);
         assertThat(entity.getStatusCode().is2xxSuccessful()).isTrue();
         assertThat(entity.getBody().getContenido()).isEqualTo(Mensaje.HOLA_MUNDO);
     }
@@ -34,8 +34,9 @@ public class MensajeControllerIntegrationTest {
     @Test
     public void saveMensajeTest() {
         Mensaje mensaje = new Mensaje();
+        mensaje.setId(1L);
         mensaje.setContenido(Mensaje.HOLA_MUNDO);
-        Mensaje mensajeRespuesta = restTemplate.postForObject("http://localhost:9000/api/mensajeCtrl/saveMensaje", mensaje, Mensaje.class);
+        Mensaje mensajeRespuesta = restTemplate.postForObject("http://localhost:9000/api/mensajeController/saveMensaje", mensaje, Mensaje.class);
         assertThat(mensajeRespuesta.getContenido()).isEqualTo(Mensaje.HOLA_MUNDO);
         assertThat(mensajeRespuesta.getId()).isEqualTo(1L);
     }
