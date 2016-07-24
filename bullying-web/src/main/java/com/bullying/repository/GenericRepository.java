@@ -1,5 +1,6 @@
 package com.bullying.repository;
 
+
 public interface GenericRepository {
 
 	@SuppressWarnings("rawtypes")
