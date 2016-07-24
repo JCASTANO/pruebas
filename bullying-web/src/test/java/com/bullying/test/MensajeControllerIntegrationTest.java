@@ -33,17 +33,17 @@ public class MensajeControllerIntegrationTest {
         Mensaje mensajeParaGuardar = new Mensaje();
         mensajeParaGuardar.setId(1L);
         mensajeParaGuardar.setContenido(CONTENIDO_MENSAJE);
-        Mensaje mensajeGuardado = restTemplate.postForObject(urlBundle.getString("saveMensaje"), mensajeParaGuardar, Mensaje.class);
+        Mensaje mensajeGuardado = restTemplate.postForObject(urlBundle.getString("guardar"), mensajeParaGuardar, Mensaje.class);
         assertThat(mensajeGuardado.getContenido()).isEqualTo(CONTENIDO_MENSAJE);
         assertThat(mensajeGuardado.getId()).isNotNull();
         
-        Mensaje mensajeConsultado = restTemplate.getForObject(urlBundle.getString("getMensaje"),Mensaje.class,mensajeGuardado.getId());
+        Mensaje mensajeConsultado = restTemplate.getForObject(urlBundle.getString("buscarPorId"),Mensaje.class,mensajeGuardado.getId());
         assertThat(mensajeConsultado.getContenido()).isEqualTo(CONTENIDO_MENSAJE);
         assertThat(mensajeConsultado.getId()).isEqualTo(mensajeGuardado.getId());
         
-        restTemplate.postForLocation(urlBundle.getString("deleteMensaje"), mensajeConsultado);
+        restTemplate.postForLocation(urlBundle.getString("borrar"), mensajeConsultado);
         
-        Mensaje mensajeBorrado = restTemplate.getForObject(urlBundle.getString("getMensaje"),Mensaje.class,mensajeConsultado.getId());
+        Mensaje mensajeBorrado = restTemplate.getForObject(urlBundle.getString("buscarPorId"),Mensaje.class,mensajeConsultado.getId());
         assertThat(mensajeBorrado).isEqualTo(null);
     }
 }

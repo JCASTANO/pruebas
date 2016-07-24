@@ -24,20 +24,20 @@ public class MensajeController {
 	private MensajeService mensajeService;
     
 	@GET
-    @Path("getMensaje")
-    public Mensaje getMensaje(@QueryParam("id") Long id) {
-       return mensajeService.findOne(id);
+    @Path("buscarPorId")
+    public Mensaje buscarPorId(@QueryParam("id") Long id) {
+       return mensajeService.buscarPorId(id);
     }
 	
 	@POST
-    @Path("saveMensaje")
-    public Mensaje saveMensaje(Mensaje mensaje) {
-        return mensajeService.save(mensaje);
+    @Path("guardar")
+    public Mensaje guardar(Mensaje mensaje) {
+        return mensajeService.guardar(mensaje);
     }
 	
 	@POST
-    @Path("deleteMensaje")
-    public void deleteMensaje(Mensaje mensaje) {
-        mensajeService.delete(mensaje);
+    @Path("borrar")
+    public void borrar(Mensaje mensaje) {
+        mensajeService.borrar(mensaje);
     }
 }
