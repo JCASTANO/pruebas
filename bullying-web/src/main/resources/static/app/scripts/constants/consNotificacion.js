@@ -5,33 +5,33 @@
     /* jshint validthis: true */
     var vm = this;
 
-    vm.json = {};
+    vm.constants = {};
 
-    $http.get("scripts/labels.json")
+    $http.get("scripts/constants.json")
       .success(function(data) {
-        vm.json = data;
+        vm.constants = data;
       })
       .error(function(data) {
-        vm.json = data;
+        vm.constants = data;
       });
 
     vm.warning = function(mensaje) {
       Notification.warning({
-        title: "Advertencia",
+        title: vm.constants.generales.advertencia,
         message: mensaje
       });
     };
 
     vm.success = function(mensaje) {
       Notification.success({
-        title: "Exitoso",
+        title: vm.constants.generales.exitoso,
         message: mensaje
       });
     };
 
     vm.error = function(mensaje) {
       Notification.error({
-        title: "Error",
+        title: vm.constants.generales.error,
         message: mensaje
       });
     };

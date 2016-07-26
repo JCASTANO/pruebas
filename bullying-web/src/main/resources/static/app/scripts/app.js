@@ -11,7 +11,7 @@
 
 
   .config(function($stateProvider, $urlRouterProvider,
-    NotificationProvider, $httpProvider) {
+    NotificationProvider) {
 
     NotificationProvider.setOptions({
       delay: 8000,
