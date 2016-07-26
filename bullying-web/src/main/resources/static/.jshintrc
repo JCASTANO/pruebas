@@ -1,0 +1,23 @@
+/*
+
+http://jshint.com/docs/options
+
+curly: Valida que todas las estructuras de control tengan {}
+eqeqeq: Valida que siempre se tenga === sobre ==, y !== sobre !=
+latedef: Valida que todas las variables sean usadas antes de declararlas
+undef: Valida que las variables que se usan esten declaradas
+unused: Valida que las variables declaradas si sean usadas
+
+*/
+
+{
+   "node": true,
+    "curly": true,
+    "eqeqeq": true,
+    "latedef": true,
+    "undef": true,
+    "unused": true,
+    "globals": {
+    "angular": false
+    }
+}

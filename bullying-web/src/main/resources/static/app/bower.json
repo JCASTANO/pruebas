@@ -1,0 +1,13 @@
+{
+  "name": "LibreriasBower",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-route": "1.4.x",
+    "angular-resource": "1.4.x",
+    "bootstrap": "~3.3.5",
+    "angular-bootstrap": "~0.14.2",
+    "angular-ui-notification": "~0.0.14",
+    "angular-ui-router": "~0.2.15"
+  }
+}
