@@ -15,7 +15,7 @@ import com.bullying.model.Mensaje;
 import com.bullying.service.MensajeService;
 
 @Component
-@Path("/mensajeController")
+@Path("/private/mensajeController")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class MensajeController {
