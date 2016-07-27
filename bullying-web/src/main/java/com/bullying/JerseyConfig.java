@@ -11,6 +11,7 @@ import com.bullyng.controller.MensajeController;
 @ApplicationPath("/api")
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
+    	register(AppExceptionMapper.class);
         register(MensajeController.class);
     }
 }
