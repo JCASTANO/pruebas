@@ -7,13 +7,11 @@ import static com.bullying.util.MensajeConstants.ID_NULL;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import com.bullying.repository.GenericRepository;
 
-@Repository
 @Transactional
 public class GenericRepositoryImpl implements GenericRepository {
 
@@ -35,5 +33,11 @@ public class GenericRepositoryImpl implements GenericRepository {
 	public void borrar(Object entity) {
 		Assert.notNull(entity, ENTITY_NULL);
 		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
+	}
+	
+	@Override
+	public void insertar(Object entity) {
+		Assert.notNull(entity, ENTITY_NULL);
+		entityManager.persist(entity);
 	}
 }

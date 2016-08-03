@@ -29,5 +29,7 @@ allprojects {
 		'org.assertj:assertj-core:1.7.0',
 		'org.springframework.boot:spring-boot-starter-test'
 	]
+	
+	project.ext.migrate = "org.flywaydb:flyway-core:4.0.3"
 }
 

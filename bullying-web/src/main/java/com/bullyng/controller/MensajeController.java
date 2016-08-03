@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bullying.model.Mensaje;
+import com.bullying.security.UserSession;
 import com.bullying.service.MensajeService;
 
 @Component
@@ -22,6 +23,9 @@ public class MensajeController {
 	
 	@Autowired
 	private MensajeService mensajeService;
+	
+	@Autowired
+	private UserSession userSession;
     
 	@GET
     @Path("buscarPorId")
@@ -39,5 +43,11 @@ public class MensajeController {
     @Path("borrar")
     public void borrar(Mensaje mensaje) {
         mensajeService.borrar(mensaje);
+    }
+	
+	@GET
+    @Path("pruebaSeguridad")
+    public void pruebaSeguridad() {
+        System.out.println(userSession.getUserSession().getName());
     }
 }

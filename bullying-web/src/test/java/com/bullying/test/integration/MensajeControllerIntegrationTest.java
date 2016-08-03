@@ -1,4 +1,4 @@
-package com.bullying.test;
+package com.bullying.test.integration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

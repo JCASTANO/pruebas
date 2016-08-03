@@ -6,6 +6,8 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.bullying.security.FilterSecurity;
+
 @Configuration
 class BeanConfiguration {
 	@Bean
@@ -23,4 +25,6 @@ class BeanConfiguration {
 	{
 		return new FilterSecurity();
 	}
+
+
 }
