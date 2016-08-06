@@ -27,6 +27,10 @@ public class User
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "FK_USER_TYPE_PROFILE"), name = "idProfile", nullable = false, referencedColumnName = "idProfile")
 	private TypeProfile profile;	
+	
+	public User() {
+		
+	}
 		
 	public User(Long idUser, String name, String email, TypeProfile profile) {
 		setId(idUser);

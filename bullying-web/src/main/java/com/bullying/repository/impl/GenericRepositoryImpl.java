@@ -40,4 +40,5 @@ public class GenericRepositoryImpl implements GenericRepository {
 		Assert.notNull(entity, ENTITY_NULL);
 		entityManager.persist(entity);
 	}
+	
 }
