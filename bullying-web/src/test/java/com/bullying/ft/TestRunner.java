@@ -2,6 +2,7 @@ package com.bullying.ft;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.failures.FailingUponPendingStep;
 import org.jbehave.core.io.CodeLocations;
@@ -21,7 +22,6 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bullying.Application;
-
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = { Application.class})
@@ -49,7 +49,6 @@ public class TestRunner extends JUnitStories {
     }
 
     @Override
-
     public InjectableStepsFactory stepsFactory() {
     	return new InstanceStepsFactory(configuration(), new CalculadoraSteps());
     }
@@ -57,5 +56,4 @@ public class TestRunner extends JUnitStories {
     protected List<String> storyPaths() {
         return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()), "**/*.story", "**/excluded*.story");
     }
-
 }
