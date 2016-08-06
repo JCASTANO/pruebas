@@ -31,8 +31,8 @@ allprojects {
 	]
 	
 	project.ext.ft = [
-		'org.jbehave:jbehave-core:3.9.5',
-		'org.jbehave:jbehave-spring:3.9.5'
+		'org.jbehave:jbehave-core:4.0.4',
+		'org.jbehave:jbehave-spring:4.0.4'
 	]
 }
 
