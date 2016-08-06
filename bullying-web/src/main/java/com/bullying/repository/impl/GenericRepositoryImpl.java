@@ -1,8 +1,11 @@
 package com.bullying.repository.impl;
 
-import static com.bullying.util.MensajeConstants.CLASE_NULL;
-import static com.bullying.util.MensajeConstants.ENTITY_NULL;
-import static com.bullying.util.MensajeConstants.ID_NULL;
+import static com.bullying.util.Constants.CLASE_NULL;
+import static com.bullying.util.Constants.CONSTANTS;
+import static com.bullying.util.Constants.ENTITY_NULL;
+import static com.bullying.util.Constants.ID_NULL;
+
+import java.util.ResourceBundle;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,21 +20,22 @@ public class GenericRepositoryImpl implements GenericRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
+	private ResourceBundle constantsBundle = ResourceBundle.getBundle(CONSTANTS);
 	
 	@SuppressWarnings({"unchecked", "rawtypes" })
 	public Object buscarPorId(Class clase,Object id) {
-		Assert.notNull(id, ID_NULL);
-		Assert.notNull(clase, CLASE_NULL);
+		Assert.notNull(id, constantsBundle.getString(ID_NULL));
+		Assert.notNull(clase, constantsBundle.getString(CLASE_NULL));
 		return entityManager.find(clase, id);
 	}
 
 	public Object guardar(Object entity) {
-		Assert.notNull(entity, ENTITY_NULL);
+		Assert.notNull(entity, constantsBundle.getString(ENTITY_NULL));
 		return entityManager.merge(entity);
 	}
 
 	public void borrar(Object entity) {
-		Assert.notNull(entity, ENTITY_NULL);
+		Assert.notNull(entity, constantsBundle.getString(ENTITY_NULL));
 		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
 	}
 	

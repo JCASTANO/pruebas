@@ -30,6 +30,11 @@ allprojects {
 		'org.springframework.boot:spring-boot-starter-test'
 	]
 	
+	project.ext.ft = [
+		'org.jbehave:jbehave-core:4.0.5',
+		'org.jbehave:jbehave-spring:4.0.5'
+	]
+
 	project.ext.migrate = "org.flywaydb:flyway-core:4.0.3"
 }
 

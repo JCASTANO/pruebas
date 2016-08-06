@@ -25,6 +25,7 @@ dependencies {
     runtime project.ext.mysql
     testCompile project.ext.ut
     compile project.ext.migrate 
+    testCompile project.ext.ft
 }
 
 war{
