@@ -51,7 +51,7 @@ public class TestRunner extends JUnitStories {
     @Override
 
     public InjectableStepsFactory stepsFactory() {
-    	return new InstanceStepsFactory(configuration(), new CalculatorSteps());
+    	return new InstanceStepsFactory(configuration(), new CalculadoraSteps());
     }
 
     protected List<String> storyPaths() {
