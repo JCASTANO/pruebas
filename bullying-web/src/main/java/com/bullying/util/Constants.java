@@ -1,6 +1,10 @@
 package com.bullying.util;
 
 public class Constants {
+	
+	private Constants() {
+		
+	}
 
 	public static final String CONSTANTS="constants";
 	/**

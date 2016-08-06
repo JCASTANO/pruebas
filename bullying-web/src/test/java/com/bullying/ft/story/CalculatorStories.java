@@ -1,4 +1,4 @@
-package com.bullying.ft;
+package com.bullying.ft.story;
 
 import java.util.List;
 
@@ -11,6 +11,8 @@ import org.jbehave.core.reporters.Format;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
+
+import com.bullying.ft.step.CalculatorSteps;
 
 public class CalculatorStories extends JUnitStories {
 

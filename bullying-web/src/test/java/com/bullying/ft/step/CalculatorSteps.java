@@ -1,4 +1,4 @@
-package com.bullying.ft;
+package com.bullying.ft.step;
 
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;

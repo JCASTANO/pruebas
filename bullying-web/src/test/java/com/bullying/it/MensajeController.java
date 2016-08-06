@@ -1,4 +1,4 @@
-package com.bullying.test;
+package com.bullying.it;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,7 +20,7 @@ import com.bullying.model.Mensaje;
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest("server.port=9000")
-public class MensajeControllerIntegrationTest {
+public class MensajeController {
 
 	private static final String CONTENIDO_MENSAJE = "Contenido";
 	private ResourceBundle aplicationBundle = ResourceBundle.getBundle("application");
