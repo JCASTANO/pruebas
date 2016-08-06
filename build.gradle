@@ -29,5 +29,10 @@ allprojects {
 		'org.assertj:assertj-core:1.7.0',
 		'org.springframework.boot:spring-boot-starter-test'
 	]
+	
+	project.ext.ft = [
+		'org.jbehave:jbehave-core:3.9.5',
+		'org.jbehave:jbehave-spring:3.9.5'
+	]
 }
 
