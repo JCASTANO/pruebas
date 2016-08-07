@@ -10,21 +10,22 @@ import com.bullying.security.FilterSecurity;
 
 @Configuration
 class BeanConfiguration {
+	private static final String FILTER_SECURITY = "filterSecurity";
+	private static final String API_PRIVATE = "/api/private/*";
+
 	@Bean
 	public FilterRegistrationBean someFilterRegistration() {
 		FilterRegistrationBean registration = new FilterRegistrationBean();
 		registration.setFilter(filterSecurity());
-		registration.addUrlPatterns("/api/private/*");
-		registration.setName("filterSecurity");
+		registration.addUrlPatterns(API_PRIVATE);
+		registration.setName(FILTER_SECURITY);
 		registration.setOrder(1);
 		return registration;
 	}
 
-	@Bean(name = "filterSecurity")
+	@Bean(name = FILTER_SECURITY)
 	public Filter filterSecurity() 
 	{
 		return new FilterSecurity();
 	}
-
-
 }

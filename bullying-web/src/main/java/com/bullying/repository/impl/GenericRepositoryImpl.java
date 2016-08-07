@@ -25,11 +25,4 @@ public class GenericRepositoryImpl implements GenericRepository {
 	public void borrar(Object entity) {
 		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
 	}
-	
-	@Override
-	public void insertar(Object entity) {
-		Assert.notNull(entity, ENTITY_NULL);
-		entityManager.persist(entity);
-	}
-	
 }

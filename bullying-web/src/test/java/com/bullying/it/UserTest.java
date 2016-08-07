@@ -33,7 +33,7 @@ public class UserTest
 	{
 		TypeProfile typeProfile = (TypeProfile) userRepository.buscarPorId(TypeProfile.class, TypeProfile.ID_PROFILE_GENERAL);
 		User user = new User(123L,"Prueba", "prueba@gmail.com", typeProfile);
-		userRepository.insertar(user);		
+		userRepository.guardar(user);		
 		User userBd = (User) userRepository.buscarPorId(User.class, 123L);
 		assertEquals(user.getEmail(), userBd.getEmail());
 		assertEquals(user.getEmail(), userBd.getEmail());

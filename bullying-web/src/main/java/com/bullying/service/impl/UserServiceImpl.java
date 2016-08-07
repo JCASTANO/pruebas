@@ -22,11 +22,9 @@ public class UserServiceImpl implements UserService
 		{
 			TypeProfile typeProfile = (TypeProfile) userRepository.buscarPorId(TypeProfile.class, TypeProfile.ID_PROFILE_GENERAL);
 			user.setProfile(typeProfile);
-			userRepository.insertar(user);
+			userRepository.guardar(user);
 			userInRepository = user;
 		}		
 		return userInRepository;
 	}
-
-
 }

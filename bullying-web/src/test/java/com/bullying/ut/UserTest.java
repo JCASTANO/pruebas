@@ -1,4 +1,4 @@
-package com.bullying.test.unit;
+package com.bullying.ut;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;

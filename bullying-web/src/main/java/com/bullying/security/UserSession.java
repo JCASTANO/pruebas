@@ -17,5 +17,4 @@ public class UserSession
 		HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();		
 		return (User) request.getAttribute("user");
 	}
-
 }

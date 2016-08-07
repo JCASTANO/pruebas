@@ -14,5 +14,4 @@ public class Validator
 			throw new ValidatorException(mensaje);
 		}
 	}
-
 }

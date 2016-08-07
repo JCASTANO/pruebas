@@ -1,11 +1,9 @@
-package com.bullying.it;
-//package com.bullying.test.integration;
+//package com.bullying.it;
 //
+//import static com.bullying.util.Constants.SERVER_PORT;
 //import static org.assertj.core.api.Assertions.assertThat;
 //
 //import java.util.ResourceBundle;
-//
-//import jdk.nashorn.internal.ir.annotations.Ignore;
 //
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
@@ -22,17 +20,14 @@ package com.bullying.it;
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = Application.class)
 //@WebAppConfiguration
-//@IntegrationTest("server.port=9000")
-//public class MensajeControllerIntegrationTest {
+//@IntegrationTest(SERVER_PORT)
+//public class MensajeTest {
 //
 //	private static final String CONTENIDO_MENSAJE = "Contenido";
-//	private ResourceBundle aplicationBundle = ResourceBundle.getBundle("application");
 //	private ResourceBundle urlBundle = ResourceBundle.getBundle("url");
-//	private RestTemplate restTemplate = new TestRestTemplate(aplicationBundle.getString("security.user.name"), 
-//															 aplicationBundle.getString("security.user.password"));
+//	private RestTemplate restTemplate = new TestRestTemplate();
 //    
 //    @Test
-//    @Ignore
 //    public void procesarMensajeTest() {
 //        Mensaje mensajeParaGuardar = new Mensaje();
 //        mensajeParaGuardar.setId(1L);
