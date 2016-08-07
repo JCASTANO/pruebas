@@ -1,5 +1,6 @@
 package com.bullying.it;
 
+import static com.bullying.util.Constants.SERVER_PORT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ResourceBundle;
@@ -19,14 +20,12 @@ import com.bullying.model.Mensaje;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@IntegrationTest("server.port=9000")
+@IntegrationTest(SERVER_PORT)
 public class MensajeController {
 
 	private static final String CONTENIDO_MENSAJE = "Contenido";
-	private ResourceBundle aplicationBundle = ResourceBundle.getBundle("application");
 	private ResourceBundle urlBundle = ResourceBundle.getBundle("url");
-	private RestTemplate restTemplate = new TestRestTemplate(aplicationBundle.getString("security.user.name"), 
-															 aplicationBundle.getString("security.user.password"));
+	private RestTemplate restTemplate = new TestRestTemplate();
     
     @Test
     public void procesarMensajeTest() {

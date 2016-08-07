@@ -17,8 +17,7 @@ allprojects {
 		'org.springframework.boot:spring-boot-starter-web',
 		'org.springframework.boot:spring-boot-starter-jersey',
 		'org.springframework.boot:spring-boot-starter-data-jpa',
-		'org.springframework.boot:spring-boot-starter-jdbc',
-		'org.springframework.boot:spring-boot-starter-security'
+		'org.springframework.boot:spring-boot-starter-jdbc'
 	]
 	
 	project.ext.mysql = [
@@ -32,7 +31,8 @@ allprojects {
 	
 	project.ext.ft = [
 		'org.jbehave:jbehave-core:4.0.5',
-		'org.jbehave:jbehave-spring:4.0.5'
+		'org.jbehave:jbehave-spring:4.0.5',
+		'org.jbehave.web:jbehave-web-selenium:3.5.5'
 	]
 }
 

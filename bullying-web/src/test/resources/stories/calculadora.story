@@ -2,9 +2,9 @@ Narrative:
 Ejemplo de sumar dos numeros
 
 Scenario: Sumar numeros
-Given una calculadora
-When <numero1> + <numero2>
-Then resultado sera <resultado>
+Given que estoy en la pagina de la calculadora
+When ingreso los valores para sumar <numero1> + <numero2>
+Then obtengo <resultado>
 
 Examples:
 |numero1|numero2|resultado|
