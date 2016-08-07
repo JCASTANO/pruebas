@@ -13,14 +13,17 @@ public class MensajeServiceImpl implements MensajeService {
 	@Autowired
     private MensajeRepository mensajeRepository;
 
+	@Override
     public Mensaje buscarPorId(Long id){
-        return mensajeRepository.buscarPorId(id);
+        return (Mensaje) mensajeRepository.buscarPorId(Mensaje.class, id);
     }
 
+	@Override
     public Mensaje guardar(Mensaje mensaje){
-        return mensajeRepository.guardar(mensaje);
+        return (Mensaje) mensajeRepository.guardar(mensaje);
     }
     
+	@Override
     public void borrar(Mensaje mensaje){
         mensajeRepository.borrar(mensaje);
     }

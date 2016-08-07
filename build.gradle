@@ -34,5 +34,7 @@ allprojects {
 		'org.jbehave:jbehave-spring:4.0.5',
 		'org.jbehave.web:jbehave-web-selenium:3.5.5'
 	]
+
+	project.ext.migrate = "org.flywaydb:flyway-core:4.0.3"
 }
 

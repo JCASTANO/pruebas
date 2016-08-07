@@ -1,10 +1,6 @@
 package com.bullying.repository;
 
-import com.bullying.model.Mensaje;
 
-public interface MensajeRepository {
+public interface MensajeRepository extends GenericRepository{
 
-	public Mensaje buscarPorId(Long id);
-	public Mensaje guardar(Mensaje mensaje);
-	public void borrar(Mensaje mensaje);
 }
