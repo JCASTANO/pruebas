@@ -62,11 +62,21 @@ eclipse {
 }
 
 test {
+    testLogging.showStandardStreams = true
 	jacoco {
 		append = true
 		destinationFile = file("../build/jacoco/jacocoTest.exec")
 	}
 	reports.junitXml.destination =  file("../build/test-results")
+}
+
+configurations {
+	jbehave
+}
+
+task copyResourcesTest(type: Copy) {
+    into 'build/classes/test'
+    from 'src/test/resources'
 }
 
 jacocoTestReport.dependsOn(test)
