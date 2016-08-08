@@ -1,14 +1,11 @@
 package com.bullying.ft.story;
 
-import static java.util.Arrays.asList;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
 import static org.jbehave.core.reporters.Format.HTML;
 import static org.jbehave.core.reporters.Format.TXT;
 import static org.jbehave.core.reporters.Format.XML;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -18,6 +15,7 @@ import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.Keywords;
 import org.jbehave.core.i18n.LocalizedKeywords;
+import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.LoadFromClasspath;
 import org.jbehave.core.io.StoryFinder;
 import org.jbehave.core.junit.JUnitStories;
@@ -41,8 +39,6 @@ import com.google.common.util.concurrent.MoreExecutors;
 
 public abstract class AbstractStory extends JUnitStories {
 	
-	private static final String EXT_STORY = "**/*.story";
-	private static final String UTF_8 = "UTF-8";
 	private static final String INGLES = "en";
 	protected WebDriverProvider driverProvider;
     protected WebDriverSteps lifecycleSteps; 
@@ -118,14 +114,7 @@ public abstract class AbstractStory extends JUnitStories {
     
     @Override
     protected List<String> storyPaths() {
-           	
-		try {
-			String ruta = URLDecoder.decode(codeLocationFromClass(this.getClass()).getFile(), UTF_8);
-			return new StoryFinder().findPaths(ruta, asList(EXT_STORY), null);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-			return new ArrayList<String>();
-		}
+    	return new StoryFinder().findPaths(CodeLocations.codeLocationFromClass(this.getClass()), "**/*.story", "**/excluded*.story");
     }
 	
 	protected abstract List<Object> getSteps();
