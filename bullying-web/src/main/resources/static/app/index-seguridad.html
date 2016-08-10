@@ -43,13 +43,13 @@
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '1632843613711783',
-    cookie     : true,  // enable cookies to allow the server to access 
+    cookie     : true,  // enable cookies to allow the server to access
                         // the session
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.7' // use graph api version 2.5
   });
 
-  // Now that we've initialized the JavaScript SDK, we call 
+  // Now that we've initialized the JavaScript SDK, we call
   // FB.getLoginStatus().  This function gets the state of the
   // person visiting this page and can return one of three states to
   // the callback you provide.  They can be:
@@ -86,11 +86,11 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-  
+
   function prueba()
   {
   	var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", "/api/private/mensajeController/pruebaSeguridad", false ); // false for synchronous request
+    xmlHttp.open( "GET", "/api/private/userController/pruebaSeguridad", false ); // false for synchronous request
     xmlHttp.send( null );
     return xmlHttp.responseText;
   }
