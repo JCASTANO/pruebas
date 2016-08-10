@@ -18,13 +18,23 @@ import com.bullying.util.Validator;
 public class LoginFacebook {
 
 	private static final String ACCESO_PROHIBIDO = "Acceso prohibido";
-	private static final String FACEBOOK_TOKEN = "Facebook-Token";
+	public static final String FACEBOOK_TOKEN = "Facebook-Token";
 	private static final String URL_FACEBOOK_DATA = "https://graph.facebook.com/me?access_token={token}&fields=email,name";
 	
 	@Autowired
 	UserService userService;
+	
+	public LoginFacebook()
+	{
+		
+	}
+	
+	public LoginFacebook(UserService userService)
+	{
+		this.userService = userService;
+	}
 
-	Cookie getCookie(HttpServletRequest httpRequest) {
+	public Cookie getCookie(HttpServletRequest httpRequest) {
 		Cookie cookie = null;
 		Cookie[] cookies = httpRequest.getCookies();
 		Validator.validateNullEmpty(cookies, ACCESO_PROHIBIDO);
@@ -35,11 +45,15 @@ public class LoginFacebook {
 		return cookie;
 	}
 
-	User getUser(HttpServletRequest httpRequest) {
+	public User getUser(HttpServletRequest httpRequest) {
 		Cookie cookie = getCookie(httpRequest);
 		Validator.validateNullEmpty(cookie, ACCESO_PROHIBIDO);
-		RestTemplate restTemplate = new RestTemplate();
-	    User user = restTemplate.getForObject(URL_FACEBOOK_DATA, User.class,cookie.getValue());	    
+		User user = getUserFromFacebook(cookie);	    
 		return userService.getUserSecurity(user);
+	}
+
+	public User getUserFromFacebook(Cookie cookie) {
+		RestTemplate restTemplate = new RestTemplate();
+	    return restTemplate.getForObject(URL_FACEBOOK_DATA, User.class,cookie.getValue());
 	}
 }
