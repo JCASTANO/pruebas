@@ -6,21 +6,19 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
 
-import com.bullying.ft.base.page.Pages;
+import com.bullying.ft.base.page.Page;
 import com.bullying.ft.page.CalculadoraPage;
 
 public class CalculadoraStep {
 
-    private Pages pages;
     private CalculadoraPage calcPagina;
 	
-    public CalculadoraStep(Pages pages) {
-	  this.pages = pages;
+    public CalculadoraStep(Page pages) {
+	  calcPagina = pages.getCalculadoraPagina();
 	}
 	
 	@Given("que estoy en la pagina de la calculadora")
 	public void givenQueEstoyEnLaPaginaDeLaCalculadora(){
-		calcPagina = pages.getCalculadoraPagina();
 		calcPagina = calcPagina.open(); 
 	}
 	

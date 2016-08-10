@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.bullying.Application;
-import com.bullying.ft.base.page.Pages;
+import com.bullying.ft.base.page.Page;
 import com.bullying.ft.driver.Driver.DriverType;
 import com.bullying.ft.step.CalculadoraStep;
 
@@ -23,15 +23,15 @@ import com.bullying.ft.step.CalculadoraStep;
 @IntegrationTest(SERVER_PORT)
 public class RunnerStory extends AbstractStory {
 
-	private Pages pages;
+	private Page pages;
 	
 	public RunnerStory() throws IOException {
     	super(DriverType.CHROME);    	
     }
 
-	private Pages getPages() {
+	private Page getPages() {
 		if(pages==null) {
-			pages = new Pages(driverProvider);
+			pages = new Page(driverProvider);
 		}
 		return pages;
 	}

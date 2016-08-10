@@ -46,10 +46,6 @@ public abstract class AbstractStory extends JUnitStories {
     protected Keywords keywords = new LocalizedKeywords(new Locale(INGLES));
     protected Configuration configuration;
     
-    public AbstractStory() {
-    	this(DriverType.CHROME, PerStoriesWebDriverSteps.class);
-    }
-    
     public AbstractStory(DriverType driverType) {
     	this(driverType, PerStoriesWebDriverSteps.class);
     } 
