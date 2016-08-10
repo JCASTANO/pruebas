@@ -42,6 +42,9 @@ import com.bullying.ft.driver.Driver;
 import com.bullying.ft.driver.Driver.DriverType;
 import com.google.common.util.concurrent.MoreExecutors;
 
+/**
+ * @author juan.castano
+*/
 public abstract class AbstractStory extends JUnitStories {
 	
 	private static final Logger LOGGER = LogManager.getLogger(AbstractStory.class);
@@ -52,10 +55,16 @@ public abstract class AbstractStory extends JUnitStories {
     protected Keywords keywords = new LocalizedKeywords(new Locale(INGLES));
     protected Configuration configuration;
     
+    /**
+     * @return AbstractStory
+     * */
     public AbstractStory(DriverType driverType) {
     	this(driverType, PerStoriesWebDriverSteps.class);
     } 
     
+    /**
+     * @return AbstractStory
+     * */
     public AbstractStory(DriverType driverType, Class<? extends WebDriverSteps> stepsClass) {
     	driverProvider = initWebDriverProvider(driverType);
     	try {

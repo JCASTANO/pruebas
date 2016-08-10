@@ -17,6 +17,11 @@ import com.bullying.model.User;
 import com.bullying.repository.UserRepository;
 import com.bullying.service.UserService;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @Transactional
@@ -28,6 +33,9 @@ public class UserTest
 	@Autowired
 	UserService userService;
 
+	/**
+	 * @category test
+	 */
 	@Test
 	public void testInsertUser()
 	{
@@ -40,6 +48,9 @@ public class UserTest
 		assertEquals(user.getId(), userBd.getId());
 	}
 	
+	/**
+	 * @category test
+	 */
 	@Test
 	public void testGetUserSecurityUnknown()
 	{
@@ -55,5 +66,4 @@ public class UserTest
 		assertTrue(userInRepository.getProfile().getIdProfile() == TypeProfile.ID_PROFILE_GENERAL);
 		assertTrue(userSecurity != null);		
 	}
-	
 }

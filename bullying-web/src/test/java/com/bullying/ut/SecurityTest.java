@@ -22,6 +22,11 @@ import com.bullying.model.User;
 import com.bullying.security.LoginFacebook;
 import com.bullying.service.UserService;
 
+/**
+ * 
+ * @author juan.botero
+ *
+ */
 public class SecurityTest 
 {
 	private static final Logger LOGGER = LogManager.getLogger(SecurityTest.class);
