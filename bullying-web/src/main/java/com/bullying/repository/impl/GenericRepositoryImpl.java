@@ -21,8 +21,4 @@ public class GenericRepositoryImpl implements GenericRepository {
 	public Object guardar(Object entity) {
 		return entityManager.merge(entity);
 	}
-
-	public void borrar(Object entity) {
-		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
-	}
 }

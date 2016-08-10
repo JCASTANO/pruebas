@@ -6,5 +6,4 @@ public interface GenericRepository {
 	@SuppressWarnings("rawtypes")
 	Object buscarPorId(Class clase,Object id);
 	Object guardar(Object entity);
-	void borrar(Object entity);
 }
