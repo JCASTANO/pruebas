@@ -12,6 +12,11 @@ import javax.ws.rs.ext.Provider;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Provider
 public class AppExceptionMapper implements ExceptionMapper<Throwable> {
 	
