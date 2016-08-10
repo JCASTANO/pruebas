@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,7 +49,10 @@ public class LoginFacebook {
 
 	public User getUser(HttpServletRequest httpRequest) {
 		Cookie cookie = getCookie(httpRequest);
-		Validator.validateNullEmpty(cookie, ACCESO_PROHIBIDO);
+		if(cookie == null)
+		{
+			throw new WebApplicationException(ACCESO_PROHIBIDO, Response.Status.FORBIDDEN);
+		}
 		User user = getUserFromFacebook(cookie);	    
 		return userService.getUserSecurity(user);
 	}

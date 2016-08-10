@@ -2,9 +2,12 @@ package com.bullying.ut;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
 
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -57,6 +60,29 @@ public class SecurityTest
 		User userFound = loginSpy.getUser(httpRequest);	
 		assertTrue(userFound != null);
 		assertTrue(1L == userFound.getId());
+	}
+	
+	@Test
+	public void getUserNoCookieTest()
+	{
+		HttpServletRequest httpRequest =  Mockito.mock(HttpServletRequest.class);
+		Cookie[] cookies = new Cookie[1];
+		cookies[0] = new Cookie("123", "123");
+		Mockito.when(httpRequest.getCookies()).thenReturn(cookies);
+		User user = new User();
+		user.setId(1L);
+		LoginFacebook loginFacebook = new LoginFacebook();
+		try 
+		{
+			loginFacebook.getUser(httpRequest);
+			fail();
+		} 
+		catch (WebApplicationException wae) 
+		{
+			assertTrue(wae.getResponse().getStatus() == Response.Status.FORBIDDEN.getStatusCode());
+		}
+			
+		
 	}
 
 }
