@@ -1,5 +1,7 @@
 package com.bullying.ft.story;
 
+import static com.bullying.util.Constants.CONSTANTS;
+import static com.bullying.util.Constants.ERROR_SERVIDOR;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
 import static org.jbehave.core.reporters.Format.HTML;
@@ -9,8 +11,11 @@ import static org.jbehave.core.reporters.Format.XML;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.Keywords;
@@ -37,8 +42,12 @@ import com.bullying.ft.driver.Driver;
 import com.bullying.ft.driver.Driver.DriverType;
 import com.google.common.util.concurrent.MoreExecutors;
 
+/**
+ * @author juan.castano
+*/
 public abstract class AbstractStory extends JUnitStories {
 	
+	private static final Logger LOGGER = LogManager.getLogger(AbstractStory.class);
 	private static final String INGLES = "en";
 	protected WebDriverProvider driverProvider;
     protected WebDriverSteps lifecycleSteps; 
@@ -46,16 +55,22 @@ public abstract class AbstractStory extends JUnitStories {
     protected Keywords keywords = new LocalizedKeywords(new Locale(INGLES));
     protected Configuration configuration;
     
+    /**
+     * @return AbstractStory
+     * */
     public AbstractStory(DriverType driverType) {
     	this(driverType, PerStoriesWebDriverSteps.class);
     } 
     
+    /**
+     * @return AbstractStory
+     * */
     public AbstractStory(DriverType driverType, Class<? extends WebDriverSteps> stepsClass) {
     	driverProvider = initWebDriverProvider(driverType);
     	try {
 			lifecycleSteps = stepsClass.getConstructor(WebDriverProvider.class).newInstance(driverProvider);
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_SERVIDOR), e);
 			lifecycleSteps = new PerStoriesWebDriverSteps(driverProvider);
 		}
     	context = new SeleniumContext();

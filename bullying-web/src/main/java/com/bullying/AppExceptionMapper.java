@@ -12,6 +12,11 @@ import javax.ws.rs.ext.Provider;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Provider
 public class AppExceptionMapper implements ExceptionMapper<Throwable> {
 	
@@ -19,8 +24,8 @@ public class AppExceptionMapper implements ExceptionMapper<Throwable> {
 	private ResourceBundle constantsBundle = ResourceBundle.getBundle(CONSTANTS);
 	
 	@Override
-	public Response toResponse(Throwable  exception) {				
-		LOGGER.error(constantsBundle.getString(ERROR_SERVIDOR), exception);
+	public Response toResponse(Throwable e) {				
+		LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_SERVIDOR), e);
 		HashMap<String, Object> respuesta = new HashMap<String, Object>();
 		respuesta.put(constantsBundle.getString(VALOR), constantsBundle.getString(ERROR_SERVIDOR));
 		return  Response.status(INTERNAL_SERVER_ERROR)

@@ -17,6 +17,11 @@ import com.bullying.ft.base.page.Page;
 import com.bullying.ft.driver.Driver.DriverType;
 import com.bullying.ft.step.CalculadoraStep;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
@@ -25,6 +30,10 @@ public class RunnerStory extends AbstractStory {
 
 	private Page pages;
 	
+	/**
+	 * 
+	 * @throws IOException
+	 */
 	public RunnerStory() throws IOException {
     	super(DriverType.CHROME);    	
     }
