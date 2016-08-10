@@ -7,15 +7,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import com.bullying.model.User;
 import com.bullying.security.LoginFacebook;
 import com.bullying.service.UserService;
 
-@RunWith(MockitoJUnitRunner.class)
 public class SecurityTest 
 {
 	@Test
