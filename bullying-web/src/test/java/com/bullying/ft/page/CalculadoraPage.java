@@ -7,7 +7,7 @@ import com.bullying.ft.base.page.AbstractPage;
 
 public class CalculadoraPage extends AbstractPage {
 	
-	private static final String PAGE_URL = "http://localhost:9000/app/index2.html";
+	private static final String PAGE_URL = "http://localhost:9003/app/index2.html";
 	private static final String RESULTADO = "resultado";
 	private static final String BTN_SUMAR = "btnSumar";
 	private static final String NUMERO2 = "numero2";
