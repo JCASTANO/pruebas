@@ -3,10 +3,13 @@ package com.bullying.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.bullying.dto.UserDto;
 import com.bullying.util.Validator;
 
 @Entity
@@ -18,10 +21,13 @@ public class User
 	public static final String ID_USER_IS_NOT_NULL = "idUser is not null";
 	
 	@Id
-	private Long idUser;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	@Column(nullable=false)
+	private Long idUserSocial;
 	@Column(nullable=false)
 	private String name;
-	@Column(nullable=false)
+	@Column(nullable=false)	
 	private String email;
 	
 	@ManyToOne
@@ -32,8 +38,8 @@ public class User
 		
 	}
 		
-	public User(Long idUser, String name, String email, TypeProfile profile) {
-		setId(idUser);
+	public User(Long idUserSocial, String name, String email, TypeProfile profile) {
+		setIdUserSocial(idUserSocial);
 		setName(name);
 		setEmail(email);
 		setProfile(profile);	
@@ -46,12 +52,12 @@ public class User
 		Validator.validateNullEmpty(profile, PROFILE_IS_NOT_NULL);
 		this.profile = profile;
 	}
-	public Long getId() {
-		return idUser;
+	public Long getIdUserSocial() {
+		return idUserSocial;
 	}
-	public void setId(Long id) {
-		Validator.validateNullEmpty(id, ID_USER_IS_NOT_NULL);
-		this.idUser = id;
+	public void setIdUserSocial(Long idUserSocial) {
+		Validator.validateNullEmpty(idUserSocial, ID_USER_IS_NOT_NULL);
+		this.idUserSocial = idUserSocial;
 	}
 	public String getName() {
 		return name;
@@ -66,6 +72,18 @@ public class User
 	public void setEmail(String email) {
 		Validator.validateNullEmpty(email, EMAIL_IS_NOT_NULL);
 		this.email = email;
+	}
+	public Long getId() {
+		return id;
+	}
+
+	public static User createUserFromUserDto(UserDto userDto) 
+	{
+		User user = new User();
+		user.setIdUserSocial(userDto.getId());
+		user.setEmail(userDto.getEmail());
+		user.setName(userDto.getName());
+		return user;
 	}
 	
 }

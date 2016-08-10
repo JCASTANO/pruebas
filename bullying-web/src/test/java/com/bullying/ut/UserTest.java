@@ -1,10 +1,9 @@
 package com.bullying.ut;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
+import com.bullying.dto.UserDto;
 import com.bullying.exception.ValidatorException;
 import com.bullying.model.TypeProfile;
 import com.bullying.model.User;
@@ -57,5 +56,19 @@ public class UserTest
 		{
 			assertEquals(User.PROFILE_IS_NOT_NULL, ve.getMessage());
 		}
+	}
+	
+	@Test
+	public void testCreateUserFromUserDto()
+	{
+		UserDto userDto = new UserDto();
+		userDto.setEmail("prueba@gmail.com");
+		userDto.setId(1L);
+		userDto.setName("usuario pruebas");
+		User user = User.createUserFromUserDto(userDto);
+		assertEquals(userDto.getEmail(), user.getEmail());
+		assertEquals(userDto.getName(), user.getName());
+		assertTrue(userDto.getId() == user.getIdUserSocial());
+		
 	}
 }

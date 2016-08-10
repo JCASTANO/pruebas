@@ -3,6 +3,7 @@ package com.bullying.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bullying.dto.UserDto;
 import com.bullying.model.TypeProfile;
 import com.bullying.model.User;
 import com.bullying.repository.UserRepository;
@@ -16,15 +17,16 @@ public class UserServiceImpl implements UserService
 	UserRepository userRepository;
 	
 	@Override
-	public User getUserSecurity(User user) {
-		User userInRepository =  (User) userRepository.buscarPorId(User.class, user.getId());
-		if(userInRepository == null)
+	public UserDto getUserSecurity(UserDto userDto) {
+		User userToSave =  userRepository.getUserByIdUserSocial(userDto.getId());
+		if(userToSave == null)
 		{
+			userToSave = User.createUserFromUserDto(userDto);
 			TypeProfile typeProfile = (TypeProfile) userRepository.buscarPorId(TypeProfile.class, TypeProfile.ID_PROFILE_GENERAL);
-			user.setProfile(typeProfile);
-			userRepository.guardar(user);
-			userInRepository = user;
+			userToSave.setProfile(typeProfile);
+			User userSaved =  (User) userRepository.guardar(userToSave);
+			userDto.setIdBullying(userSaved.getId());
 		}		
-		return userInRepository;
+		return userDto;
 	}
 }

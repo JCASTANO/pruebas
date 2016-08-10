@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.bullying.model.User;
+import com.bullying.dto.UserDto;
 import com.bullying.service.UserService;
 import com.bullying.util.Validator;
 
@@ -47,18 +47,18 @@ public class LoginFacebook {
 		return cookie;
 	}
 
-	public User getUser(HttpServletRequest httpRequest) {
+	public UserDto getUser(HttpServletRequest httpRequest) {
 		Cookie cookie = getCookie(httpRequest);
 		if(cookie == null)
 		{
 			throw new WebApplicationException(ACCESO_PROHIBIDO, Response.Status.FORBIDDEN);
 		}
-		User user = getUserFromFacebook(cookie);	    
+		UserDto user = getUserFromFacebook(cookie);	    
 		return userService.getUserSecurity(user);
 	}
 
-	public User getUserFromFacebook(Cookie cookie) {
+	public UserDto getUserFromFacebook(Cookie cookie) {
 		RestTemplate restTemplate = new RestTemplate();
-	    return restTemplate.getForObject(URL_FACEBOOK_DATA, User.class,cookie.getValue());
+	    return restTemplate.getForObject(URL_FACEBOOK_DATA, UserDto.class,cookie.getValue());
 	}
 }
