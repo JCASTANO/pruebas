@@ -41,10 +41,9 @@ public class GenericRepositoryImpl implements GenericRepository {
 	 * @since Aug 11, 2016
 	 * @see com.bullying.repository.GenericRepository#guardar(java.lang.Object)
 	 * @param entity
+	 * @return entity
 	 */
 	public Object guardar(Object entity) {
 		return entityManager.merge(entity);
 	}
-	
-	
 }
