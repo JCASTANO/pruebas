@@ -18,7 +18,10 @@ import com.bullying.util.Validator;
 
 /**
  * 
- * @author juan.botero
+ * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
+ * @project bullying-web
+ * @class LoginFacebook
+ * @since Aug 11, 2016
  *
  */
 @Service
@@ -40,7 +43,10 @@ public class LoginFacebook {
 	}
 	
 	/**
-	 * @author juan.botero
+	 * 
+	 * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
+	 * @since Aug 11, 2016
+	 * @param userService
 	 */
 	public LoginFacebook(UserService userService)
 	{
@@ -48,7 +54,11 @@ public class LoginFacebook {
 	}
 
 	/**
-	 * @author juan.botero
+	 * 
+	 * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
+	 * @since Aug 11, 2016
+	 * @param httpRequest
+	 * @return
 	 */
 	public Cookie getCookie(HttpServletRequest httpRequest) {
 		Cookie cookie = null;
@@ -62,7 +72,11 @@ public class LoginFacebook {
 	}
 
 	/**
-	 * @author juan.botero
+	 * 
+	 * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
+	 * @since Aug 11, 2016
+	 * @param httpRequest
+	 * @return
 	 */
 	public UserDto getUser(HttpServletRequest httpRequest) {
 		Cookie cookie = getCookie(httpRequest);
@@ -75,7 +89,11 @@ public class LoginFacebook {
 	}
 
 	/**
-	 * @author juan.botero
+	 * 
+	 * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
+	 * @since Aug 11, 2016
+	 * @param cookie
+	 * @return
 	 */
 	public UserDto getUserFromFacebook(Cookie cookie) {
 		RestTemplate restTemplate = new RestTemplate();

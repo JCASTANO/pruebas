@@ -1,4 +1,4 @@
-package com.bullying.it;
+package com.bullying;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.orm.jpa.EntityScan;
