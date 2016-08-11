@@ -2,6 +2,10 @@ package com.bullying.util;
 
 public class Constants {
 	
+	private Constants() {
+		
+	}
+	
 	public static final String CONSTANTS="constants";
 	public static final String SERVER_PORT = "server.port=9003";
 	/**
