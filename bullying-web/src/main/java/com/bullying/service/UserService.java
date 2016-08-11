@@ -1,11 +1,11 @@
 package com.bullying.service;
 
-import com.bullying.model.User;
+import com.bullying.dto.UserDto;
 
 
 public interface UserService {
 
-	User getUserSecurity(User userFacebook);
+	UserDto getUserSecurity(UserDto user);
 
 
 }

@@ -3,6 +3,7 @@ package com.bullying.ut;
 import static com.bullying.util.Constants.CONSTANTS;
 import static com.bullying.util.Constants.ERROR_PRUEBA;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ResourceBundle;
@@ -11,9 +12,11 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import com.bullying.dto.UserDto;
 import com.bullying.exception.ValidatorException;
 import com.bullying.model.TypeProfile;
 import com.bullying.model.User;
+
 
 /**
  * 
@@ -89,5 +92,19 @@ public class UserTest
 			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_PRUEBA), ve);
 			assertEquals(User.PROFILE_IS_NOT_NULL, ve.getMessage());
 		}
+	}
+	
+	@Test
+	public void testCreateUserFromUserDto()
+	{
+		UserDto userDto = new UserDto();
+		userDto.setEmail("prueba@gmail.com");
+		userDto.setId(1L);
+		userDto.setName("usuario pruebas");
+		User user = User.createUserFromUserDto(userDto);
+		assertEquals(userDto.getEmail(), user.getEmail());
+		assertEquals(userDto.getName(), user.getName());
+		assertTrue(userDto.getId() == user.getIdUserSocial());
+		
 	}
 }

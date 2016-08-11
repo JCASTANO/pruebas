@@ -12,6 +12,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bullying.Application;
+import com.bullying.dto.UserDto;
 import com.bullying.model.TypeProfile;
 import com.bullying.model.User;
 import com.bullying.repository.UserRepository;
@@ -42,10 +43,10 @@ public class UserTest
 		TypeProfile typeProfile = (TypeProfile) userRepository.buscarPorId(TypeProfile.class, TypeProfile.ID_PROFILE_GENERAL);
 		User user = new User(123L,"Prueba", "prueba@gmail.com", typeProfile);
 		userRepository.guardar(user);		
-		User userBd = (User) userRepository.buscarPorId(User.class, 123L);
+		User userBd = userRepository.getUserByIdUserSocial(123L);
 		assertEquals(user.getEmail(), userBd.getEmail());
 		assertEquals(user.getEmail(), userBd.getEmail());
-		assertEquals(user.getId(), userBd.getId());
+		assertEquals(user.getIdUserSocial(), userBd.getIdUserSocial());
 	}
 	
 	/**
@@ -54,16 +55,28 @@ public class UserTest
 	@Test
 	public void testGetUserSecurityUnknown()
 	{
-		User userFacebook = new User();
+		UserDto userFacebook = new UserDto();
 		userFacebook.setId(10000L);
 		userFacebook.setEmail("prueba@gmail.com");
 		userFacebook.setName("Usuario de prueba");
-		User userSecurity = userService.getUserSecurity(userFacebook);
-		User userInRepository =  (User) userRepository.buscarPorId(User.class, 10000L);		
+		UserDto userSecurity = userService.getUserSecurity(userFacebook);
+		User userInRepository =   userRepository.getUserByIdUserSocial(10000L);		
 		assertTrue(userInRepository != null);
 		assertEquals(userFacebook.getEmail(), userInRepository.getEmail());
 		assertEquals(userFacebook.getName(), userInRepository.getName());
-		assertTrue(userInRepository.getProfile().getIdProfile() == TypeProfile.ID_PROFILE_GENERAL);
-		assertTrue(userSecurity != null);		
+		assertTrue(userSecurity != null);	
+		assertTrue(userSecurity.getIdBullying() != null && userSecurity.getIdBullying() > 0);	
+	}
+	
+	@Test
+	public void testGetUserByIdUserSocial()
+	{
+		TypeProfile typeProfile = (TypeProfile) userRepository.buscarPorId(TypeProfile.class, TypeProfile.ID_PROFILE_GENERAL);
+		User user = new User(123L,"Prueba", "prueba@gmail.com", typeProfile);
+		userRepository.guardar(user);
+		User userFound = userRepository.getUserByIdUserSocial(123L);
+		assertEquals(user.getEmail(), userFound.getEmail());
+		assertEquals(user.getName(), userFound.getName());
+		assertEquals(user.getIdUserSocial(), userFound.getIdUserSocial());
 	}
 }

@@ -11,7 +11,7 @@ import com.bullying.repository.GenericRepository;
 public class GenericRepositoryImpl implements GenericRepository {
 
 	@PersistenceContext
-	private EntityManager entityManager; 
+	protected EntityManager entityManager; 
 	
 	@SuppressWarnings({"unchecked", "rawtypes" })
 	public Object buscarPorId(Class clase,Object id) {
@@ -21,4 +21,6 @@ public class GenericRepositoryImpl implements GenericRepository {
 	public Object guardar(Object entity) {
 		return entityManager.merge(entity);
 	}
+	
+	
 }

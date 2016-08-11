@@ -7,14 +7,14 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.bullying.model.User;
+import com.bullying.dto.UserDto;
 
 @Service
 public class UserSession 
 {
-	public User getUserSession() {
+	public UserDto getUserSession() {
 		RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
 		HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();		
-		return (User) request.getAttribute("user");
+		return (UserDto) request.getAttribute("user");
 	}
 }

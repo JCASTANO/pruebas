@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.bullying.model.User;
+import com.bullying.dto.UserDto;
 import com.bullying.security.LoginFacebook;
 import com.bullying.service.UserService;
 
@@ -63,14 +63,14 @@ public class SecurityTest
 		Cookie[] cookies = new Cookie[1];
 		cookies[0] = new Cookie(LoginFacebook.FACEBOOK_TOKEN, "123");
 		Mockito.when(httpRequest.getCookies()).thenReturn(cookies);
-		User user = new User();
+		UserDto user = new UserDto();
 		user.setId(1L);
 		UserService userService = Mockito.mock(UserService.class);
 		Mockito.when(userService.getUserSecurity(user)).thenReturn(user);		
 		LoginFacebook loginFacebook = new LoginFacebook(userService);
 		LoginFacebook loginSpy = Mockito.spy(loginFacebook);		
 		Mockito.doReturn(user).when(loginSpy).getUserFromFacebook(cookies[0]);
-		User userFound = loginSpy.getUser(httpRequest);	
+		UserDto userFound = loginSpy.getUser(httpRequest);	
 		assertTrue(userFound != null);
 		assertTrue(1L == userFound.getId());
 	}
@@ -82,7 +82,7 @@ public class SecurityTest
 		Cookie[] cookies = new Cookie[1];
 		cookies[0] = new Cookie("123", "123");
 		Mockito.when(httpRequest.getCookies()).thenReturn(cookies);
-		User user = new User();
+		UserDto user = new UserDto();
 		user.setId(1L);
 		LoginFacebook loginFacebook = new LoginFacebook();
 		try 

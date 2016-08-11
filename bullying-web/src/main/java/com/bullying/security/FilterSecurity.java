@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.bullying.model.User;
+import com.bullying.dto.UserDto;
 
 /**
  * Servlet Filter implementation class FilterSecurity
@@ -29,7 +29,7 @@ public class FilterSecurity implements Filter
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException 
 	{
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		User user = loginFacebook.getUser(httpRequest);
+		UserDto user = loginFacebook.getUser(httpRequest);
         request.setAttribute("user", user);
 		chain.doFilter(request, response);
 	}
