@@ -26,6 +26,9 @@ public class GenericRepositoryImpl implements GenericRepository {
 	 * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
 	 * @since Aug 11, 2016
 	 * @see com.bullying.repository.GenericRepository#buscarPorId(java.lang.Class, java.lang.Object)
+	 * @return Object
+	 * @param clase
+	 * @param id
 	 */
 	@SuppressWarnings({"unchecked", "rawtypes" })
 	public Object buscarPorId(Class clase,Object id) {
@@ -37,6 +40,7 @@ public class GenericRepositoryImpl implements GenericRepository {
 	 * @author <a href="mailto:estebancastanorincon@gmail.com">Juan Esteban Castano</a>
 	 * @since Aug 11, 2016
 	 * @see com.bullying.repository.GenericRepository#guardar(java.lang.Object)
+	 * @param entity
 	 */
 	public Object guardar(Object entity) {
 		return entityManager.merge(entity);

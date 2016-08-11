@@ -7,10 +7,6 @@ package com.bullying.util;
  */
 public class Constants {
 	
-	private Constants() {
-		
-	}
-	
 	public static final String ARCHIVO_CONSTANTS="constants";
 	public static final String SERVER_PORT = "server.port=9003";
 	/**
@@ -19,4 +15,8 @@ public class Constants {
 	public static final String ERROR_SERVIDOR="ERROR_SERVIDOR";
 	public static final String ERROR_PRUEBA="ERROR_PRUEBA";
 	public static final String VALOR="VALOR";
+	
+	private Constants() {
+		
+	}
 }

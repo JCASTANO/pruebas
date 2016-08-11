@@ -7,6 +7,7 @@ import com.bullying.dto.UserDto;
  * @author juan.botero
  *
  */
+@FunctionalInterface
 public interface UserService {
 
 	/**
