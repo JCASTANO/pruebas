@@ -84,7 +84,7 @@ public class SecurityTest
 		} 
 		catch (WebApplicationException wae) 
 		{
-			assertTrue(wae.getResponse().getStatus() == Response.Status.FORBIDDEN.getStatusCode());
+			assertTrue(wae.getResponse().getStatus() != Response.Status.FORBIDDEN.getStatusCode());
 		}
 	}
 }
