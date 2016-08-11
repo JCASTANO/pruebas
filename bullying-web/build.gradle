@@ -61,8 +61,7 @@ eclipse {
 
 }
 
-test {
-    testLogging.showStandardStreams = true   
+test {  
 	jacoco {
 		append = true
 		destinationFile = file("../bullying-web/build/jacoco/jacocoTest.exec")
