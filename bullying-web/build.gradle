@@ -65,9 +65,9 @@ test {
     testLogging.showStandardStreams = true
 	jacoco {
 		append = true
-		destinationFile = file("../build/jacoco/jacocoTest.exec")
+		destinationFile = file("../bullying-web/build/jacoco/jacocoTest.exec")
 	}
-	reports.junitXml.destination =  file("../build/test-results")
+	reports.junitXml.destination =  file("../bullying-web/build/test-results")
 }
 
 configurations {
