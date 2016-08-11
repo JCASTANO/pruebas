@@ -1,6 +1,6 @@
 package com.bullying.ft.story;
 
-import static com.bullying.util.Constants.CONSTANTS;
+import static com.bullying.util.Constants.ARCHIVO_CONSTANTS;
 import static com.bullying.util.Constants.ERROR_SERVIDOR;
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
@@ -70,7 +70,7 @@ public abstract class AbstractStory extends JUnitStories {
     	try {
 			lifecycleSteps = stepsClass.getConstructor(WebDriverProvider.class).newInstance(driverProvider);
 		} catch (Exception e) {
-			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_SERVIDOR), e);
+			LOGGER.error(ResourceBundle.getBundle(ARCHIVO_CONSTANTS).getString(ERROR_SERVIDOR), e);
 			lifecycleSteps = new PerStoriesWebDriverSteps(driverProvider);
 		}
     	context = new SeleniumContext();

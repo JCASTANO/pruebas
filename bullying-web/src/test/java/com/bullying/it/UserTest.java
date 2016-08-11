@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.bullying.Application;
 import com.bullying.dto.UserDto;
 import com.bullying.model.TypeProfile;
 import com.bullying.model.User;
@@ -24,7 +23,7 @@ import com.bullying.service.UserService;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = ApplicationTest.class)
 @Transactional
 public class UserTest 
 {

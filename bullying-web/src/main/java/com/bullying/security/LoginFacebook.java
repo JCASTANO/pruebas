@@ -36,7 +36,7 @@ public class LoginFacebook {
 	 */
 	public LoginFacebook()
 	{
-		
+		// Default constructor
 	}
 	
 	/**

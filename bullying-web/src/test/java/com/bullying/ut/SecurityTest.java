@@ -1,6 +1,6 @@
 package com.bullying.ut;
 
-import static com.bullying.util.Constants.CONSTANTS;
+import static com.bullying.util.Constants.ARCHIVO_CONSTANTS;
 import static com.bullying.util.Constants.ERROR_PRUEBA;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -92,7 +92,7 @@ public class SecurityTest
 		} 
 		catch (WebApplicationException wae) 
 		{
-			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_PRUEBA), wae);
+			LOGGER.error(ResourceBundle.getBundle(ARCHIVO_CONSTANTS).getString(ERROR_PRUEBA), wae);
 			assertTrue(wae.getResponse().getStatus() == Response.Status.FORBIDDEN.getStatusCode());
 		}
 	}

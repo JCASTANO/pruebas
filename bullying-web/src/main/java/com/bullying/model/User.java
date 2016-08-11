@@ -40,7 +40,7 @@ public class User
 	private TypeProfile profile;	
 	
 	public User() {
-		
+		// Default Constructor
 	}
 		
 	/**

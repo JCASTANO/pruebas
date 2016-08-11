@@ -1,6 +1,6 @@
 package com.bullying.ut;
 
-import static com.bullying.util.Constants.CONSTANTS;
+import static com.bullying.util.Constants.ARCHIVO_CONSTANTS;
 import static com.bullying.util.Constants.ERROR_PRUEBA;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -41,7 +41,7 @@ public class UserTest
 			fail();
 		} catch (ValidatorException ve) 
 		{
-			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_PRUEBA), ve);
+			LOGGER.error(ResourceBundle.getBundle(ARCHIVO_CONSTANTS).getString(ERROR_PRUEBA), ve);
 			assertEquals(User.ID_USER_IS_NOT_NULL, ve.getMessage());
 		}
 	}
@@ -57,7 +57,7 @@ public class UserTest
 			fail();
 		} catch (ValidatorException ve) 
 		{
-			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_PRUEBA), ve);
+			LOGGER.error(ResourceBundle.getBundle(ARCHIVO_CONSTANTS).getString(ERROR_PRUEBA), ve);
 			assertEquals(User.NAME_IS_NOT_NULL, ve.getMessage());
 		}
 	}
@@ -73,7 +73,7 @@ public class UserTest
 			fail();
 		} catch (ValidatorException ve) 
 		{
-			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_PRUEBA), ve);
+			LOGGER.error(ResourceBundle.getBundle(ARCHIVO_CONSTANTS).getString(ERROR_PRUEBA), ve);
 			assertEquals(User.EMAIL_IS_NOT_NULL, ve.getMessage());
 		}
 	}
@@ -89,7 +89,7 @@ public class UserTest
 			fail();
 		} catch (ValidatorException ve) 
 		{
-			LOGGER.error(ResourceBundle.getBundle(CONSTANTS).getString(ERROR_PRUEBA), ve);
+			LOGGER.error(ResourceBundle.getBundle(ARCHIVO_CONSTANTS).getString(ERROR_PRUEBA), ve);
 			assertEquals(User.PROFILE_IS_NOT_NULL, ve.getMessage());
 		}
 	}

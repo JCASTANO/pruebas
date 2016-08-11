@@ -42,11 +42,12 @@ public class FilterSecurity implements Filter
 	 * @param fConfig
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
+		// Metodo init
 	}
 
 	@Override
 	public void destroy() {
-		
+		// Metodo destroy
 	}
 
 }
