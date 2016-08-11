@@ -5,6 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Embeddable
 public class ResourceProfilePk  implements Serializable
 {

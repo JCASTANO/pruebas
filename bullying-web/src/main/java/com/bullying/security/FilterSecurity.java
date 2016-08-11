@@ -15,7 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bullying.dto.UserDto;
 
 /**
- * Servlet Filter implementation class FilterSecurity
+ * 
+ * @author juan.botero
+ *
  */
 public class FilterSecurity implements Filter 
 {
@@ -24,7 +26,9 @@ public class FilterSecurity implements Filter
 	private LoginFacebook loginFacebook;
 
 	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 * @param request
+	 * @param response
+	 * @param chain
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException 
 	{
@@ -35,7 +39,7 @@ public class FilterSecurity implements Filter
 	}
 
 	/**
-	 * @see Filter#init(FilterConfig)
+	 * @param fConfig
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 	}

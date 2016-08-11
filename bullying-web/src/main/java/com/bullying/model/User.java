@@ -12,6 +12,11 @@ import javax.persistence.ManyToOne;
 import com.bullying.dto.UserDto;
 import com.bullying.util.Validator;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Entity
 public class User 
 {
@@ -38,6 +43,13 @@ public class User
 		
 	}
 		
+	/**
+	 * 
+	 * @param idUserSocial
+	 * @param name
+	 * @param email
+	 * @param profile
+	 */
 	public User(Long idUserSocial, String name, String email, TypeProfile profile) {
 		setIdUserSocial(idUserSocial);
 		setName(name);
@@ -77,6 +89,11 @@ public class User
 		return id;
 	}
 
+	/**
+	 * 
+	 * @param userDto
+	 * @return
+	 */
 	public static User createUserFromUserDto(UserDto userDto) 
 	{
 		User user = new User();

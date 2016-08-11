@@ -12,6 +12,11 @@ import org.springframework.stereotype.Component;
 
 import com.bullying.security.UserSession;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Component
 @Path("/private/userController")
 @Produces(APPLICATION_JSON)
@@ -21,6 +26,9 @@ public class UserController {
 	@Autowired
 	private UserSession userSession;
 	
+	/**
+	 * @author juan.castano
+	 */
 	@GET
     @Path("pruebaSeguridad")
     public void pruebaSeguridad() {

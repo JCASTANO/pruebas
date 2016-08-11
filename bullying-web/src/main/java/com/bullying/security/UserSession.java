@@ -9,6 +9,11 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.bullying.dto.UserDto;
 
+/**
+ * 
+ * @author juan.botero
+ *
+ */
 @Service
 public class UserSession 
 {

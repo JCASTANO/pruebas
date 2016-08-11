@@ -1,5 +1,10 @@
 package com.bullying.util;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 public class Constants {
 	
 	private Constants() {

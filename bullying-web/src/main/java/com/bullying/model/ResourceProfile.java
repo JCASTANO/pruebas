@@ -6,6 +6,11 @@ import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Entity
 public class ResourceProfile 
 {

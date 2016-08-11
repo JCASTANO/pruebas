@@ -9,6 +9,11 @@ import com.bullying.model.User;
 import com.bullying.repository.UserRepository;
 import com.bullying.service.UserService;
 
+/**
+ * 
+ * @author juan.botero
+ *
+ */
 @Service
 public class UserServiceImpl implements UserService 
 {
@@ -16,6 +21,9 @@ public class UserServiceImpl implements UserService
 	@Autowired
 	UserRepository userRepository;
 	
+	/**
+	 * @author juan.botero
+	 */
 	@Override
 	public UserDto getUserSecurity(UserDto userDto) {
 		User userToSave =  userRepository.getUserByIdUserSocial(userDto.getId());

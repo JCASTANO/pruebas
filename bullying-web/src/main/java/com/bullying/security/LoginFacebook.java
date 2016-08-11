@@ -16,6 +16,11 @@ import com.bullying.dto.UserDto;
 import com.bullying.service.UserService;
 import com.bullying.util.Validator;
 
+/**
+ * 
+ * @author juan.botero
+ *
+ */
 @Service
 public class LoginFacebook {
 
@@ -26,16 +31,25 @@ public class LoginFacebook {
 	@Autowired
 	UserService userService;
 	
+	/**
+	 * @author juan.botero
+	 */
 	public LoginFacebook()
 	{
 		
 	}
 	
+	/**
+	 * @author juan.botero
+	 */
 	public LoginFacebook(UserService userService)
 	{
 		this.userService = userService;
 	}
 
+	/**
+	 * @author juan.botero
+	 */
 	public Cookie getCookie(HttpServletRequest httpRequest) {
 		Cookie cookie = null;
 		Cookie[] cookies = httpRequest.getCookies();
@@ -47,6 +61,9 @@ public class LoginFacebook {
 		return cookie;
 	}
 
+	/**
+	 * @author juan.botero
+	 */
 	public UserDto getUser(HttpServletRequest httpRequest) {
 		Cookie cookie = getCookie(httpRequest);
 		if(cookie == null)
@@ -57,6 +74,9 @@ public class LoginFacebook {
 		return userService.getUserSecurity(user);
 	}
 
+	/**
+	 * @author juan.botero
+	 */
 	public UserDto getUserFromFacebook(Cookie cookie) {
 		RestTemplate restTemplate = new RestTemplate();
 	    return restTemplate.getForObject(URL_FACEBOOK_DATA, UserDto.class,cookie.getValue());

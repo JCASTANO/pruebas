@@ -7,9 +7,18 @@ import org.springframework.context.annotation.Configuration;
 
 import com.bullyng.controller.UserController;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Configuration
 @ApplicationPath("/api")
 public class JerseyConfig extends ResourceConfig {
+	
+	/**
+	 * @author juan.castano
+	 */
     public JerseyConfig() {
     	register(AppExceptionMapper.class);
         register(UserController.class);

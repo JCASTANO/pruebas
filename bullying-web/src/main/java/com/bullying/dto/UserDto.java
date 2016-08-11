@@ -1,6 +1,10 @@
 package com.bullying.dto;
 
-
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 public class UserDto {
 	
 	private Long id;

@@ -10,6 +10,11 @@ import org.springframework.stereotype.Repository;
 import com.bullying.model.User;
 import com.bullying.repository.UserRepository;
 
+/**
+ * 
+ * @author juan.castano
+ *
+ */
 @Repository(value="userRepositoryImpl")
 public class UserRepositoryImpl extends GenericRepositoryImpl implements UserRepository  
 {
