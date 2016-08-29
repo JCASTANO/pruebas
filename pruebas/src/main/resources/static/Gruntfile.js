@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             'app/scripts/*.js',
             'app/scripts/**/*.js'
             ],
-        dest: 'app/dist/bullying.js'
+        dest: 'app/dist/pruebas.js'
       }
     },
     uglify: {
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          'app/dist/bullying.min.js': ['app/dist/bullying.js']
+          'app/dist/pruebas.min.js': ['app/dist/pruebas.js']
         }
       }
     },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'app/dist/bullying.min.css': [
+          'app/dist/pruebas.min.css': [
             'app/bower_components/bootstrap/dist/css/bootstrap.min.css',
             'app/bower_components/angular-ui-notification/dist/angular-ui-notification.min.css'
           ]

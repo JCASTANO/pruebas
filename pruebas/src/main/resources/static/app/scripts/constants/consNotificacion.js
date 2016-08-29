@@ -39,6 +39,6 @@
     return vm;
   }
 
-  angular.module('Bullying')
+  angular.module('Pruebas')
     .service('messageUtil', messageUtil);
 })();

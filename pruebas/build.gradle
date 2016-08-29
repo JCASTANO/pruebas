@@ -29,7 +29,7 @@ dependencies {
 }
 
 war{
-	archiveName 'bullying-web.war'
+	archiveName 'pruebas.war'
 }
 
 compileJava { 
@@ -48,7 +48,7 @@ eclipse {
 	}
 
 	project {
-		name = 'bullying-web'
+		name = 'pruebas'
         buildCommand 'com.google.gdt.eclipse.core.webAppProjectValidator'
 	}
 
@@ -64,9 +64,9 @@ eclipse {
 test {  
 	jacoco {
 		append = true
-		destinationFile = file("../bullying-web/build/jacoco/jacocoTest.exec")
+		destinationFile = file("../pruebas/build/jacoco/jacocoTest.exec")
 	}
-	reports.junitXml.destination =  file("../bullying-web/build/test-results")
+	reports.junitXml.destination =  file("../pruebas/build/test-results")
 }
 
 configurations {

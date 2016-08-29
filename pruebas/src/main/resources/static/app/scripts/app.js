@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('Bullying', [
+    .module('Pruebas', [
       'ngResource',
       'ui.bootstrap',
       'ui-notification',

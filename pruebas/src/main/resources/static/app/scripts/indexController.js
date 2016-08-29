@@ -7,6 +7,6 @@
     return vm;
   }
 
-  angular.module('Bullying')
+  angular.module('Pruebas')
     .controller('indexController', indexController);
 })();
