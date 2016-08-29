@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>stories.calculadora</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+<div class="story">
+<h1></h1>
+<div class="path">stories/calculadora.story</div>
+<div class="scenario">
+<h2>Scenario: Sumar numeros</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given que estoy en la pagina de la calculadora</div>
+<div class="step">When ingreso los valores para sumar &lt;numero1&gt; + &lt;numero2&gt;</div>
+<div class="step">Then obtengo &lt;resultado&gt;</div>
+<table>
+<thead>
+<tr>
+<th>numero1</th><th>numero2</th><th>resultado</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td><td>1</td><td>2</td></tr>
+<tr>
+<td>1</td><td>3</td><td>4</td></tr>
+<tr>
+<td>10</td><td>40</td><td>50</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {numero1=1, numero2=1, resultado=2}</h3>
+<div class="step successful">Given que estoy en la pagina de la calculadora</div>
+<div class="step successful">When ingreso los valores para sumar <span class="step parameter">1</span> + <span class="step parameter">1</span></div>
+<div class="step successful">Then obtengo <span class="step parameter">2</span></div>
+
+<h3 class="example">Example: {numero1=1, numero2=3, resultado=4}</h3>
+<div class="step successful">Given que estoy en la pagina de la calculadora</div>
+<div class="step successful">When ingreso los valores para sumar <span class="step parameter">1</span> + <span class="step parameter">3</span></div>
+<div class="step successful">Then obtengo <span class="step parameter">4</span></div>
+
+<h3 class="example">Example: {numero1=10, numero2=40, resultado=50}</h3>
+<div class="step successful">Given que estoy en la pagina de la calculadora</div>
+<div class="step successful">When ingreso los valores para sumar <span class="step parameter">10</span> + <span class="step parameter">40</span></div>
+<div class="step successful">Then obtengo <span class="step parameter">50</span></div>
+</div>
+</div>
+</div>
+
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

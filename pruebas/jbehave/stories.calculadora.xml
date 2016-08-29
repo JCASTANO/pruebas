@@ -1,0 +1,30 @@
+<story path="stories/calculadora.story" title="">
+<scenario keyword="Scenario:" title="Sumar numeros">
+<examples keyword="Examples:">
+<step>Given que estoy en la pagina de la calculadora</step>
+<step>When ingreso los valores para sumar &lt;numero1&gt; + &lt;numero2&gt;</step>
+<step>Then obtengo &lt;resultado&gt;</step>
+<parameters>
+<names><name>numero1</name><name>numero2</name><name>resultado</name></names>
+<values><value>1</value><value>1</value><value>2</value></values>
+<values><value>1</value><value>3</value><value>4</value></values>
+<values><value>10</value><value>40</value><value>50</value></values>
+</parameters>
+
+<example keyword="Example:">{numero1=1, numero2=1, resultado=2}</example>
+<step outcome="successful">Given que estoy en la pagina de la calculadora</step>
+<step outcome="successful">When ingreso los valores para sumar <parameter>1</parameter> + <parameter>1</parameter></step>
+<step outcome="successful">Then obtengo <parameter>2</parameter></step>
+
+<example keyword="Example:">{numero1=1, numero2=3, resultado=4}</example>
+<step outcome="successful">Given que estoy en la pagina de la calculadora</step>
+<step outcome="successful">When ingreso los valores para sumar <parameter>1</parameter> + <parameter>3</parameter></step>
+<step outcome="successful">Then obtengo <parameter>4</parameter></step>
+
+<example keyword="Example:">{numero1=10, numero2=40, resultado=50}</example>
+<step outcome="successful">Given que estoy en la pagina de la calculadora</step>
+<step outcome="successful">When ingreso los valores para sumar <parameter>10</parameter> + <parameter>40</parameter></step>
+<step outcome="successful">Then obtengo <parameter>50</parameter></step>
+</examples>
+</scenario>
+</story>

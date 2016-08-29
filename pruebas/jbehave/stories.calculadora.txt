@@ -1,0 +1,30 @@
+
+(stories/calculadora.story)
+Scenario: Sumar numeros
+Examples:
+Given que estoy en la pagina de la calculadora
+When ingreso los valores para sumar <numero1> + <numero2>
+Then obtengo <resultado>
+
+|numero1|numero2|resultado|
+|1|1|2|
+|1|3|4|
+|10|40|50|
+
+Example: {numero1=1, numero2=1, resultado=2}
+Given que estoy en la pagina de la calculadora
+When ingreso los valores para sumar 1 + 1
+Then obtengo 2
+
+Example: {numero1=1, numero2=3, resultado=4}
+Given que estoy en la pagina de la calculadora
+When ingreso los valores para sumar 1 + 3
+Then obtengo 4
+
+Example: {numero1=10, numero2=40, resultado=50}
+Given que estoy en la pagina de la calculadora
+When ingreso los valores para sumar 10 + 40
+Then obtengo 50
+
+
+
